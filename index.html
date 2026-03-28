@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kia Ora</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 1;
+    }
+
+    .text {
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .text h1 {
+      font-family: 'Georgia', serif;
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: normal;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+      text-shadow: 0 2px 40px rgba(0,0,0,0.6);
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    .text p {
+      font-family: 'Georgia', serif;
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      color: rgba(255,255,255,0.8);
+      margin-top: 1rem;
+      font-style: italic;
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+      animation: fadeIn 2s ease 0.8s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop playsinline>
+    <source src="mp4/bg.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="text">
+    <h1>Kia Ora!</h1>
+    <p>Welcome · Nau mai, haere mai</p>
+  </div>
+
+</body>
+</html>
